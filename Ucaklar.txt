@@ -1,4 +1,4 @@
-tip, kapasite, uretimYili
+tip; kapasite; uretimYili
 Airbus A319;155;2020
 Airbus A320;200;2010
 Airbus A330;225;2009

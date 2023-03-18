@@ -6,17 +6,18 @@ public class Main {
 
         String username;
 
-        String yonAd = "1";
-        String musAd = "2";
+        String yonAd = "admin";
+        String musAd = "müşteri";
+        String perAd = "personel";
 
 
-        System.out.println("Lütfen kullanıcı adı ve şifre giriniz(1-Yönetici 2-Müşteri): ");
+        System.out.println("Lütfen kullanıcı adı ve şifre giriniz(1-Yönetici(admin) 2-Personel(personel) 3-Müşteri(müsteri): ");
         Scanner scan = new Scanner(System.in);
         username = scan.nextLine();
 
 
-        int x = 1;
-        while (x != 0) {
+        boolean flag = true;
+        while (flag != false) {
             if (username.equals(yonAd)) {
                 System.out.println("******************");
                 System.out.println("Yönetici olarak giriş yapıyorsunuz.");
@@ -28,12 +29,16 @@ public class Main {
                     case "2" -> Yonetici.getirUcus();
                     case "3" -> Yonetici.getirHavalimani();
                     case "4" -> Yonetici.getirHavayoluSirket();
-                    case "0" -> x = 0;
+                    case "0" -> flag = false;
                 }
             } else if (username.equals(musAd)) {
                 System.out.println("Müşteri olarak giriş yapıyorsunuz.");
-                x = 0;
-            } else {
+                flag = false;
+            }
+            else if (username.equals(perAd)){
+                System.out.println("Personel olarak giriş yapıyorsunuz");
+                flag = false;
+            }else {
                 System.out.println("Hatalı kullanıcı adı veya şifre!");
             }
         }
